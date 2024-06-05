@@ -24,7 +24,7 @@ test("Player - Check if you can add a ship vertically and horizontally to the bo
   player.placeShip(shipX, 0, 4, "horizontal");
 
   expect(() => {
-    player.placeShip(carrier, 3, 2, "horizontal");
+    player.placeShip(carrier, 3, 5, "horizontal");
     console.log(player.board);
   }).not.toThrow();
 });

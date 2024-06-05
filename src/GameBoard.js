@@ -33,7 +33,7 @@ export default class GameBoard {
           if (this.board[y][x] instanceof Ship) {
             throw "Your ship cannot be placed on top of another ship!";
           }
-          if (shipsLength >= this.board.length && originalShipsLength > 1) {
+          if (shipsLength > this.board.length - y && originalShipsLength > 1) {
             throw "Ship is vertically bigger than the board!";
           }
           this.board[y][x] = ship;
@@ -52,7 +52,7 @@ export default class GameBoard {
           if (this.board[y][x] instanceof Ship) {
             throw "Your ship cannot be placed on top of another ship!";
           }
-          if (shipsLength >= this.board[x].length - x && originalShipsLength > 1) {
+          if (shipsLength > this.board[x].length - x && originalShipsLength > 1) {
             throw "Ship is horizontally bigger than the board!";
           }
           this.board[y][x] = ship;
