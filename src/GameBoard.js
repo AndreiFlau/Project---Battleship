@@ -19,33 +19,46 @@ export default class GameBoard {
   }
 
   addShip(ship, corY, corX, direction) {
-    const shipsLength = ship.length;
+    const originalShipsLength = ship.length;
+    let shipsLength = ship.length;
     let shipCounter = 0;
     for (let y = 0; y < this.board.length; y++) {
       for (let x = 0; x < this.board.length; x++) {
-        if (y === corY && x === corX && shipCounter < shipsLength && direction === "vertical") {
+        if (
+          y === corY &&
+          x === corX &&
+          shipCounter < originalShipsLength &&
+          direction === "vertical"
+        ) {
           if (this.board[y][x] instanceof Ship) {
             throw "Your ship cannot be placed on top of another ship!";
           }
-          if (shipsLength > y && shipsLength > 1) {
+          if (shipsLength >= this.board.length && originalShipsLength > 1) {
             throw "Ship is vertically bigger than the board!";
           }
           this.board[y][x] = ship;
           corY = corY + 1;
           shipCounter += 1;
+          shipsLength -= 1;
           this.ships.push(ship);
         }
 
-        if (y === corY && x === corX && shipCounter < shipsLength && direction === "horizontal") {
+        if (
+          y === corY &&
+          x === corX &&
+          shipCounter < originalShipsLength &&
+          direction === "horizontal"
+        ) {
           if (this.board[y][x] instanceof Ship) {
             throw "Your ship cannot be placed on top of another ship!";
           }
-          if (shipsLength > x && shipsLength > 1) {
+          if (shipsLength >= this.board[x].length - x && originalShipsLength > 1) {
             throw "Ship is horizontally bigger than the board!";
           }
           this.board[y][x] = ship;
           corX = corX + 1;
           shipCounter += 1;
+          shipsLength -= 1;
           this.ships.push(ship);
         }
       }
