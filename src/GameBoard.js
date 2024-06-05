@@ -14,11 +14,10 @@ export default class GameBoard {
       ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
       ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
     ];
+    this.continue = false;
+    this.ships = [];
   }
 
-  //TODO - If the ship is bigger than the board, make it so goes upwards instead
-  //TODO - Check if a ship already exists in the cell, if it does throw an error
-  //TODO - Check if the ship is being placed on the edge/ is bigger than the board, if so, throw an error
   addShip(ship, corY, corX, direction) {
     const shipsLength = ship.length;
     let shipCounter = 0;
@@ -34,6 +33,7 @@ export default class GameBoard {
           this.board[y][x] = ship;
           corY = corY + 1;
           shipCounter += 1;
+          this.ships.push(ship);
         }
 
         if (y === corY && x === corX && shipCounter < shipsLength && direction === "horizontal") {
@@ -46,6 +46,7 @@ export default class GameBoard {
           this.board[y][x] = ship;
           corX = corX + 1;
           shipCounter += 1;
+          this.ships.push(ship);
         }
       }
     }
@@ -60,11 +61,26 @@ export default class GameBoard {
           if (y === corY && x === corX && this.board[y][x] instanceof Ship) {
             this.board[y][x].hit();
             this.board[y][x] = "X";
+            this.continue = true;
           } else if (y === corY && x === corX && !(this.board[y][x] instanceof Ship)) {
             this.board[y][x] = "M";
+            this.continue = false;
           }
         }
       }
     }
+  }
+
+  checkGameOver() {
+    let shipCounter = 0;
+    for (let ship = 0; ship < this.ships.length; ship++) {
+      if (this.ships[ship].sunk === true) {
+        shipCounter += 1;
+      }
+    }
+    if (shipCounter === this.ships.length) {
+      return true;
+    }
+    return false;
   }
 }

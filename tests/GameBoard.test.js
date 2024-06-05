@@ -86,3 +86,18 @@ test("receiveAttack throws error when hitting the same spot", () => {
     gameBoard.receiveAttack(0, 5);
   }).toThrow("You already shot");
 });
+
+test("Check if all ships have been sunk", () => {
+  const gameBoard = new GameBoard();
+  const ship = new Ship(1, 0);
+  const ship1 = new Ship(3, 0);
+  gameBoard.addShip(ship, 0, 4, "horizontal");
+  gameBoard.addShip(ship1, 2, 3, "horizontal");
+  gameBoard.receiveAttack(0, 4);
+
+  gameBoard.receiveAttack(2, 3);
+  gameBoard.receiveAttack(2, 4);
+  gameBoard.receiveAttack(2, 5);
+
+  expect(gameBoard.checkGameOver()).toBe(true);
+});
