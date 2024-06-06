@@ -34,3 +34,8 @@ h1 {
 .shot {
   cursor: none;
 }
+
+.win {
+  display: flex;
+  justify-content: center;
+}

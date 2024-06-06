@@ -68,7 +68,7 @@ export default class GameBoard {
   receiveAttack(corY, corX) {
     for (let y = 0; y < this.board.length; y++) {
       for (let x = 0; x < this.board.length; x++) {
-        if ((y === corY && x === corX && this.board[y][x] === "X") || this.board[y][x] === "M") {
+        if (y === corY && x === corX && (this.board[y][x] === "X" || this.board[y][x] === "M")) {
           throw "You already shot at these coordinates!";
         } else {
           if (y === corY && x === corX && this.board[y][x] instanceof Ship) {
