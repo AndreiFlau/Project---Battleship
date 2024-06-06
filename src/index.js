@@ -24,5 +24,6 @@ computer.placeShip(battleship, 1, 4, "horizontal");
 computer.placeShip(submarine, 2, 4, "horizontal");
 computer.placeShip(destroyer, 3, 4, "horizontal");
 computer.placeShip(patrolBoat, 4, 4, "horizontal");
+
 displayBoard(player, ".player");
 displayBoard(computer, ".computer");
