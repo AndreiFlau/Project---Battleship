@@ -8,7 +8,8 @@ export default function displayBoard(player, whereToDisplay, boardsClass, oppone
   const gameBoard = player.board;
   const oppenentGameBoard = opponent.board;
   const board = player.board.board;
-  let someoneWon = false;
+  let playerWon = false;
+  let opponentWon = false;
 
   if (gameBoard.checkGameOver()) {
     const winElement = document.createElement("div");
@@ -17,11 +18,11 @@ export default function displayBoard(player, whereToDisplay, boardsClass, oppone
     winElement.appendChild(h2);
     winElement.className = "win";
     boardElement.insertAdjacentElement("afterend", winElement);
-    someoneWon = true;
+    playerWon = true;
   }
 
   if (oppenentGameBoard.checkGameOver()) {
-    someoneWon = true;
+    opponentWon = true;
   }
 
   for (let y = 0; y < board.length; y++) {
@@ -35,14 +36,14 @@ export default function displayBoard(player, whereToDisplay, boardsClass, oppone
         cell.className = "shot";
       } else if (board[y][x] instanceof Ship) {
         cell.innerText = "S";
-        if (!someoneWon) {
+        if (!playerWon || !opponentWon) {
           cell.addEventListener("click", () => {
             gameBoard.receiveAttack(y, x);
             resetTheGame(parentDiv, player, whereToDisplay, boardsClass, opponent);
           });
         }
       } else {
-        if (!someoneWon) {
+        if (!playerWon || !opponentWon) {
           cell.addEventListener("click", () => {
             gameBoard.receiveAttack(y, x);
             resetTheGame(parentDiv, player, whereToDisplay, boardsClass, opponent);

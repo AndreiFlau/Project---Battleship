@@ -31,6 +31,10 @@ h1 {
   cursor: pointer;
 }
 
+.unclickable.gameboard div {
+  cursor: default;
+}
+
 .shot {
   cursor: none;
 }
