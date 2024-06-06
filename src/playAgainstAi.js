@@ -75,7 +75,7 @@ export default function playAgainstAi(player, whereToDisplayPlayer, whereToDispl
             resetTheGame(aiParentDiv, player, whereToDisplayPlayer, whereToDisplayAI, boardsClass, computer);
           });
         }
-        cell.innerText = "S";
+        cell.innerText = "-";
       } else {
         if (!gameState.playerWon && !gameState.computerWon) {
           cell.addEventListener("click", () => {
@@ -96,7 +96,6 @@ export default function playAgainstAi(player, whereToDisplayPlayer, whereToDispl
 function aiMove(gameBoard) {
   let randomMoveY = Math.floor(Math.random() * 10);
   let randomMoveX = Math.floor(Math.random() * 10);
-  console.log(gameBoard.board[randomMoveY][randomMoveX]);
   while (gameBoard.board[randomMoveY][randomMoveX] === "X" || gameBoard.board[randomMoveY][randomMoveX] === "M") {
     randomMoveY = Math.floor(Math.random() * 10);
     randomMoveX = Math.floor(Math.random() * 10);

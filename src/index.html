@@ -11,5 +11,95 @@
       <div class="player"><h2>Player</h2></div>
       <div class="computer"><h2>Computer</h2></div>
     </div>
+    <dialog open class="battleshipdialog">
+      <p>Welcome to Battleship! Please inform the coordinates of your ships below:</p>
+      <form class="battleshipform">
+        <h3>Carrier:</h3>
+        <label for="carrierY">
+          Y
+          <input type="number" min="0" max="9" id="carrierY" name="carrierY" required />
+        </label>
+        <label for="carrierX">
+          X
+          <input type="number" min="0" max="9" id="carrierX" name="carrierX" required />
+        </label>
+        <label for="carrierdirection">
+          Direction
+          <select id="carrierdirection" name="carrierdirection" required>
+            <option value="horizontal">Horizontal</option>
+            <option value="vertical">Vertical</option>
+          </select>
+        </label>
+
+        <h3>Battleship:</h3>
+        <label for="battleshipY">
+          Y
+          <input type="number" min="0" max="9" id="battleshipY" name="battleshipY" required />
+        </label>
+        <label for="battleshipX">
+          X
+          <input type="number" min="0" max="9" id="battleshipX" name="battleshipX" required />
+        </label>
+        <label for="battleshipdirection">
+          Direction
+          <select id="battleshipdirection" name="battleshipdirection" required>
+            <option value="horizontal">Horizontal</option>
+            <option value="vertical">Vertical</option>
+          </select>
+        </label>
+
+        <h3>Submarine:</h3>
+        <label for="submarineY">
+          Y
+          <input type="number" min="0" max="9" id="submarineY" name="submarineY" required />
+        </label>
+        <label for="submarineX">
+          X
+          <input type="number" min="0" max="9" id="submarineX" name="submarineX" required />
+        </label>
+        <label for="submarinedirection">
+          Direction
+          <select id="submarinedirection" name="submarinedirection" required>
+            <option value="horizontal">Horizontal</option>
+            <option value="vertical">Vertical</option>
+          </select>
+        </label>
+
+        <h3>Destroyer:</h3>
+        <label for="destroyerY">
+          Y
+          <input type="number" min="0" max="9" id="destroyerY" name="destroyerY" required />
+        </label>
+        <label for="destroyerX">
+          X
+          <input type="number" min="0" max="9" id="destroyerX" name="destroyerX" required />
+        </label>
+        <label for="destroyerdirection">
+          Direction
+          <select id="destroyerdirection" name="destroyerdirection" required>
+            <option value="horizontal">Horizontal</option>
+            <option value="vertical">Vertical</option>
+          </select>
+        </label>
+
+        <h3>Patrol Boat:</h3>
+        <label for="patrolboatY">
+          Y
+          <input type="number" min="0" max="9" id="patrolboatY" name="patrolboatY" required />
+        </label>
+        <label for="patrolboatX">
+          X
+          <input type="number" min="0" max="9" id="patrolboatX" name="patrolboatX" required />
+        </label>
+        <label for="patrolboatdirection">
+          Direction
+          <select id="patrolboatdirection" name="patrolboatdirection" required>
+            <option value="horizontal">Horizontal</option>
+            <option value="vertical">Vertical</option>
+          </select>
+        </label>
+        <button type="submit">Play</button>
+      </form>
+    </dialog>
   </body>
 </html>
