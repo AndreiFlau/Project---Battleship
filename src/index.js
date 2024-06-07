@@ -130,3 +130,8 @@ function aiPlacementRandomizer() {
   }
   return { Y: randomMoveY, X: randomMoveX, Direction: randomDirection };
 }
+
+const reset = document.querySelector(".reset");
+reset.addEventListener("click", () => {
+  location.reload();
+});

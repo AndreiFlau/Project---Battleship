@@ -7,6 +7,7 @@
   </head>
   <body>
     <h1>Battleship</h1>
+    <button class="reset">Reset</button>
     <div class="boards">
       <div class="player"><h2>Player</h2></div>
       <div class="computer"><h2>Computer</h2></div>
@@ -17,11 +18,11 @@
         <h3>Carrier:</h3>
         <label for="carrierY">
           Y
-          <input type="number" min="0" max="9" id="carrierY" name="carrierY" required />
+          <input type="number" min="0" max="9" id="carrierY" name="carrierY" value="0" required />
         </label>
         <label for="carrierX">
           X
-          <input type="number" min="0" max="9" id="carrierX" name="carrierX" required />
+          <input type="number" min="0" max="9" id="carrierX" name="carrierX" value="0" required />
         </label>
         <label for="carrierdirection">
           Direction
@@ -34,11 +35,11 @@
         <h3>Battleship:</h3>
         <label for="battleshipY">
           Y
-          <input type="number" min="0" max="9" id="battleshipY" name="battleshipY" required />
+          <input type="number" min="0" max="9" id="battleshipY" name="battleshipY" value="1" required />
         </label>
         <label for="battleshipX">
           X
-          <input type="number" min="0" max="9" id="battleshipX" name="battleshipX" required />
+          <input type="number" min="0" max="9" id="battleshipX" name="battleshipX" value="1" required />
         </label>
         <label for="battleshipdirection">
           Direction
@@ -51,11 +52,11 @@
         <h3>Submarine:</h3>
         <label for="submarineY">
           Y
-          <input type="number" min="0" max="9" id="submarineY" name="submarineY" required />
+          <input type="number" min="0" max="9" id="submarineY" name="submarineY" value="2" required />
         </label>
         <label for="submarineX">
           X
-          <input type="number" min="0" max="9" id="submarineX" name="submarineX" required />
+          <input type="number" min="0" max="9" id="submarineX" name="submarineX" value="2" required />
         </label>
         <label for="submarinedirection">
           Direction
@@ -68,11 +69,11 @@
         <h3>Destroyer:</h3>
         <label for="destroyerY">
           Y
-          <input type="number" min="0" max="9" id="destroyerY" name="destroyerY" required />
+          <input type="number" min="0" max="9" id="destroyerY" name="destroyerY" value="3" required />
         </label>
         <label for="destroyerX">
           X
-          <input type="number" min="0" max="9" id="destroyerX" name="destroyerX" required />
+          <input type="number" min="0" max="9" id="destroyerX" name="destroyerX" value="3" required />
         </label>
         <label for="destroyerdirection">
           Direction
@@ -85,11 +86,11 @@
         <h3>Patrol Boat:</h3>
         <label for="patrolboatY">
           Y
-          <input type="number" min="0" max="9" id="patrolboatY" name="patrolboatY" required />
+          <input type="number" min="0" max="9" id="patrolboatY" name="patrolboatY" value="4" required />
         </label>
         <label for="patrolboatX">
           X
-          <input type="number" min="0" max="9" id="patrolboatX" name="patrolboatX" required />
+          <input type="number" min="0" max="9" id="patrolboatX" name="patrolboatX" value="4" required />
         </label>
         <label for="patrolboatdirection">
           Direction

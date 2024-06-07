@@ -7,10 +7,21 @@ h1 {
   justify-content: center;
 }
 
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .gameboard {
   display: grid;
-  grid-template-columns: repeat(10, 20px);
-  grid-template-rows: auto;
+  grid-template-columns: repeat(10, 50px);
+  grid-template-rows: repeat(10, 50px);
+}
+
+.battleshipdialog {
+  margin-top: 700px;
 }
 
 .boards {
@@ -29,17 +40,38 @@ h1 {
 .player .gameboard div,
 .computer .gameboard div {
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
 }
 
 .unclickable.gameboard div {
   cursor: default;
 }
 
-.shot {
-  cursor: none;
+.shot.hit,
+.shot.miss {
+  cursor: default !important;
 }
 
 .win {
   display: flex;
   justify-content: center;
+}
+
+.water {
+  background-color: rgb(0, 140, 255);
+}
+
+.ship {
+  background-color: grey;
+}
+
+.hit {
+  background-color: red;
+}
+
+.miss {
+  background-color: rgb(173, 216, 230);
 }

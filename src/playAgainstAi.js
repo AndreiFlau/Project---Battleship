@@ -42,13 +42,15 @@ export default function playAgainstAi(player, whereToDisplayPlayer, whereToDispl
       const cell = document.createElement("div");
       if (board[y][x] === "X") {
         cell.innerText = "X";
-        cell.className = "shot";
+        cell.className = "shot hit";
       } else if (board[y][x] === "M") {
         cell.innerText = "+";
-        cell.className = "shot";
+        cell.className = "shot miss";
       } else if (board[y][x] instanceof Ship) {
+        cell.className = "ship";
         cell.innerText = "S";
       } else {
+        cell.className = "water";
         cell.innerText = "-";
       }
       parentDiv.appendChild(cell);
@@ -62,10 +64,10 @@ export default function playAgainstAi(player, whereToDisplayPlayer, whereToDispl
       const cell = document.createElement("div");
       if (computerBoard[y][x] === "X") {
         cell.innerText = "X";
-        cell.className = "shot";
+        cell.className = "shot hit";
       } else if (computerBoard[y][x] === "M") {
         cell.innerText = "+";
-        cell.className = "shot";
+        cell.className = "shot miss";
       } else if (computerBoard[y][x] instanceof Ship) {
         if (!gameState.playerWon && !gameState.computerWon) {
           cell.addEventListener("click", () => {
@@ -75,6 +77,7 @@ export default function playAgainstAi(player, whereToDisplayPlayer, whereToDispl
             resetTheGame(aiParentDiv, player, whereToDisplayPlayer, whereToDisplayAI, boardsClass, computer);
           });
         }
+        cell.className = "water";
         cell.innerText = "-";
       } else {
         if (!gameState.playerWon && !gameState.computerWon) {
@@ -85,6 +88,7 @@ export default function playAgainstAi(player, whereToDisplayPlayer, whereToDispl
             resetTheGame(aiParentDiv, player, whereToDisplayPlayer, whereToDisplayAI, boardsClass, computer);
           });
         }
+        cell.className = "water";
         cell.innerText = "-";
       }
       aiParentDiv.appendChild(cell);
