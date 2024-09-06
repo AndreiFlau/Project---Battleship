@@ -2,6 +2,8 @@
 
 A web battleship game where you play against an ai. It was made with javascript, css, and html.
 
+![website](battleshipscreenshot.png)
+
 ## Installation
 
 Simply clone the repo and run the [index.html](src/index.html) file.
